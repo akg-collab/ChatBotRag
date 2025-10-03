@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 # load environment variables
 load_dotenv(find_dotenv())
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("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")
 if not OPENAI_API_KEY:
     logger.error("OPENAI_API_KEY is not set")
     raise ValueError("OPENAI_API_KEY is not set")
@@ -121,3 +121,4 @@ def parse_pdf(file_content: bytes) -> list[Document]:
     blob = Blob(data=file_content)
     document = [doc for doc in parser.lazy_parse(blob)]
     return document
+
